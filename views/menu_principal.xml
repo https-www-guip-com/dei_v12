@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="data_test_tree_dei" model="ir.ui.view">
+        <field name="name">dei.tree</field>
+        <field name="model">test_model_dei</field>
+        <field name="arch" type="xml">
+            <tree string="CAI">
+                <field name="cai"/>
+                <field name="expiration_date"/>
+                <field name="compania"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--PRIMERO-->
+    <record id="data_test_form_dei" model="ir.ui.view">
+        <field name="name">dei.ticket.form</field>
+        <field name="model">test_model_dei</field>
+        <field name="arch" type="xml">
+            <form string="CAI">
+                <header>
+                     
+                </header>
+                <sheet>
+
+                 <group>
+                           <field name="id" invisible="1"/>
+                            <field name="cai" col="1"/>
+                            <field name="compania" col="3"/>
+                            <field name="expiration_date" />
+                     </group>
+              
+                     	<group>
+                            <notebook>
+                            <page>
+                                <field name="fiscal_regimes">
+                                
+                                    <tree editable="top">
+                                        <field name="sequence"/>
+                                        <field name="desde"/>
+                                        <field name="hasta"/>
+                                    </tree>
+                              
+                                </field>
+                            </page>
+                            </notebook>
+                        </group>
+                    
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            
+            </form>
+        </field>
+    </record>
+
+    
+    <record id="action_123_dei" model="ir.actions.act_window">
+        <field name="name">Regimen de Facturacion</field>
+        <field name="res_model">test_model_dei</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+   
+              <menuitem
+                id="account_dei_folder"
+                name="CAI"
+                parent="account.account_account_menu"
+                groups="dei_v12.grupo_cai"
+                action="action_123_dei"
+                sequence="5"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+menu_dei_root,access.test_model_dei,model_test_model_dei,grupo_cai,1,1,1,1
+menu_dei_root1,access.test_fiscal_regime,model_test_fiscal_regime,grupo_cai,1,1,1,1
+

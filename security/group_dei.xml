@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record model="ir.module.category" id="module_category_dei">
+	            <field name="name">CAI</field>
+	            <field name="description">Regimen Fiscal</field>
+	            <field name="sequence">4</field>
+			</record>
+
+			<record id="grupo_cai" model="res.groups"> 
+	            <field name="name">CAI</field>
+	            <field name="category_id" ref="module_category_dei"/>
+       		 </record>
+
+			
+
+    </data>
+</odoo>

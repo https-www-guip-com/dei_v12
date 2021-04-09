@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="account_invoice_view_inh">
+            <field name="name">account.invoice.form.view.inh</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='amount_tax']" position="after">
+                    <field name="total_descuento" widget='monetary' options="{'currency_field': 'currency_id'}" />
+                </xpath>
+                <notebook position="inside">
+                    <page string="Compras Exentas SAR" >
+                        <group>
+                        <group>
+                            <field name="numero_orden_exenta"/>
+                            <field name="numero_correlativo_constancia_exonerado"/>
+                        </group>
+                        <group>
+                            <field name="numero_identificacion_sag"/>
+                        </group>
+                        </group>
+                    </page>
+                </notebook>
+                
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

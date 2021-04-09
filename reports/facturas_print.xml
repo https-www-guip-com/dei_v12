@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+        id="formato_factura_print"
+        model="account.invoice"
+        string="Factura SAR"
+        name="dei_v12.facturas_print_view_document"
+        file="dei_v12.facturas_print_view_document"
+        report_type="qweb-pdf"
+        print_report_name="(object._get_report_base_filename())"
+        groups="account.group_account_invoice"
+        />
+        
+
+</odoo>
+
